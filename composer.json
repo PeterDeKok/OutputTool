@@ -1,0 +1,26 @@
+{
+    "name": "peterdekok/outputtool",
+    "type": "library",
+    "description": "Debug tool",
+    "homepage": "https://github.com/peterdekok/outputtool",
+    "license": "MIT",
+    "require": {
+        "php" : "^7.0"
+    },
+    "authors": [
+        {
+            "name": "Peter de Kok",
+            "email": "info@peterdekok.nl",
+            "homepage": "http://www.peterdekok.nl",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "outputtool@peterdekok.nl"
+    },
+    "autoload": {
+        "psr-4": {
+            "PeterDeKok\\OutputTool\\": "src"
+        }
+    }
+}
