@@ -9,6 +9,7 @@ namespace PeterDeKok\OutputTool;
  * @method static notice($string, $color = true, $background_color = true);
  * @method static success($string, $color = true, $background_color = true);
  * @method static title($string, $color = true, $background_color = true, $separate_title = false);
+ * @method static output($string, $title = null, $color = null, $background_color = null, $separate_title = true)
  */
 class OutputTool {
 
@@ -21,7 +22,7 @@ class OutputTool {
         if ($this->getErrorLevel() >= 1) {
             $color = $color ? '38;5;1' : null;
             $background_color = $background_color ? '7' : null;
-            self::output($string, '>>  ERROR  >>', $color, $background_color);
+            $this->output_output($string, '>>  ERROR  >>', $color, $background_color);
         }
     }
 
@@ -29,7 +30,7 @@ class OutputTool {
         if ($this->getErrorLevel() >= 2) {
             $color = $color ? '38;5;3' : null;
             $background_color = $background_color ? '7' : null;
-            self::output($string, '>> WARNING >>', $color, $background_color);
+            $this->output_output($string, '>> WARNING >>', $color, $background_color);
         }
     }
 
@@ -37,7 +38,7 @@ class OutputTool {
         if ($this->getErrorLevel() >= 3) {
             $color = $color ? '38;5;8' : null;
             $background_color = $background_color ? '7' : null;
-            self::output($string, '>> NOTICE  >>', $color, $background_color);
+            $this->output_output($string, '>> NOTICE  >>', $color, $background_color);
         }
     }
 
@@ -45,7 +46,7 @@ class OutputTool {
         if ($this->getErrorLevel() >= 1) {
             $color = $color ? '38;5;2' : null;
             $background_color = $background_color ? '7' : null;
-            self::output($string, '>> SUCCESS >>', $color, $background_color);
+            $this->output_output($string, '>> SUCCESS >>', $color, $background_color);
         }
     }
 
@@ -54,11 +55,11 @@ class OutputTool {
         if ($this->getErrorLevel() >= 1) {
             $color = $color ? '38;5;8' : null;
             $background_color = $background_color ? '7' : null;
-            self::output($string, '             ', $color, $background_color, $separate_title);
+            $this->output_output($string, '             ', $color, $background_color, $separate_title);
         }
     }
 
-    public function output ($string, $title = null, $color = null, $background_color = null, $separate_title = true) {
+    public function output_output ($string, $title = null, $color = null, $background_color = null, $separate_title = true) {
         if ($this->getErrorLevel() >= 1) {
             $preset = "";
             if (PHP_SAPI === 'cli') {
