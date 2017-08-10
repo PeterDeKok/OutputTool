@@ -58,7 +58,7 @@ class OutputTool {
         }
     }
 
-    protected function output ($string, $title = null, $color = null, $background_color = null, $separate_title = true) {
+    public function output ($string, $title = null, $color = null, $background_color = null, $separate_title = true) {
         if ($this->getErrorLevel() >= 1) {
             $preset = "";
             if (PHP_SAPI === 'cli') {
